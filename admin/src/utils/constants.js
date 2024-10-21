@@ -21,16 +21,16 @@ export const orderStatusList = [
   { name: 'Delivered', value: 'delivered' },
 ];
 
-// export const domain = process.env.REACT_APP_BACKEND_HOST;
-export const auth_url = `http://localhost:5000/api/admin/auth`;
-export const login_url = `http://localhost:5000/api/admin/login`;
-export const register_url = `http://localhost:5000/api/admin/register`;
-export const logout_url = `http://localhost:5000/api/admin/logout`;
-export const orders_url = `http://localhost:5000/api/admin/orders`;
-export const update_product_url = `http://localhost:5000/api/admin/product/`;
-export const products_url = `http://localhost:5000/api/products/`;
-export const admins_url = `http://localhost:5000/api/admin/users/`;
-export const single_order_url = `http://localhost:5000/api/orders/`;
-export const update_order_status = `http://localhost:5000/api/admin/order/`;
-export const create_new_product = `http://localhost:5000/api/admin/product/new`;
-export const delete_review = `http://localhost:5000/api/admin/product/review/`;
+export const domain = process.env.REACT_APP_BACKEND_HOST;
+export const auth_url = `${domain}/api/admin/auth`;
+export const login_url = `${domain}/api/admin/login`;
+export const register_url = `${domain}/api/admin/register`;
+export const logout_url = `${domain}/api/admin/logout`;
+export const orders_url = `${domain}/api/admin/orders`;
+export const update_product_url = `${domain}/api/admin/product/`;
+export const products_url = `${domain}/api/products/`;
+export const admins_url = `${domain}/api/admin/users/`;
+export const single_order_url = `${domain}/api/orders/`;
+export const update_order_status = `${domain}/api/admin/order/`;
+export const create_new_product = `${domain}/api/admin/product/new`;
+export const delete_review = `${domain}/api/admin/product/review/`;
