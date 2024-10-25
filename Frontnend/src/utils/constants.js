@@ -111,7 +111,7 @@ export const services = [
   },
 ];
 
-const domain = process.env.REACT_APP_BACKEND_HOST|| 'http://localhost:5000'; 
+const domain = process.env.REACT_APP_BACKEND_HOST|| 'https://globalizationclothing-backend.onrender.com'; 
 export const products_url = `${domain}/api/products`;
 export const single_product_url = `${domain}/api/products/`;
 export const create_order_url = `${domain}/api/orders/new`;
