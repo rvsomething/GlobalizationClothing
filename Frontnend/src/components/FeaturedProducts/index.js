@@ -33,7 +33,7 @@ const FeaturedProducts = () => {
       <div className='section-center featured'>
         {featured.map((product) => {
 
-          console.log(product);
+          // console.log(product);
           return  <Product key={product.id} {...product}  />;
 
         })}
