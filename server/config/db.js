@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const connectToDb = () => {
   mongoose
     .connect("mongodb+srv://ratikvohra:GlobalizationClothing@cluster1.ksgzt64.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1", {
-      useNewUrlParser: true,
+      // useNewUrlParser: true,
       // useUnifiedTopology: true,
     })
     .then((data) =>

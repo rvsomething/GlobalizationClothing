@@ -25,8 +25,8 @@ const FeaturedProducts = () => {
   return (
     <div>
       <h1>
-  <span class="word">Featured</span>
-  <span class="word">Product<span class="superscript">s</span> </span>
+  <span className="word">Featured</span>
+  <span className="word">Product<span className="superscript">s</span> </span>
 </h1>
     <Wrapper className='section'>
     

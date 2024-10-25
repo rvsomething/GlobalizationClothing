@@ -35,12 +35,19 @@ process.on('uncaughtException', (err) => {
 // connect to db
 connectToDb();
 
-// using middlewares
-// Configure CORS to allow requests from your frontend origin
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'https://globalizationclothing-frontnend.onrender.com',
+];
+
+
 app.use(cors({
-  origin: 'https://globalizationclothing-frontnend.onrender.com',
-  credentials: true, // if your frontend needs to send cookies
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true, // Important for allowing cookies and authentication
 }));
+
 app.use(express.json({ limit: '20mb' }));
 app.use(cookieParser());
 
