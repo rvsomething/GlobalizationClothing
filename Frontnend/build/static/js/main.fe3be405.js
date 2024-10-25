@@ -29616,7 +29616,7 @@
                     o = e.text,
                     d = e.id;
                   return (0,
-                  It.jsx)('div', { children: 4 === d ? (0, It.jsx)('a', { href: 'mailto:tiwarivarun819.vt33.vt@gmail.com', children: o }) : (0, It.jsx)(he, { to: t, children: o }) }, d);
+                  It.jsx)('div', { children: 4 === d ? (0, It.jsx)('a', { href: 'mailto:ratik.vohra@gmail.com', children: o }) : (0, It.jsx)(he, { to: t, children: o }) }, d);
                 }),
               }),
               (0, It.jsx)('div', { className: 'underline' }),
@@ -33350,7 +33350,7 @@
                       }),
                       (0, It.jsx)('p', {
                         children:
-                          "Globalization Clothing was started by Varun Tiwar in December'21, with an aim to build a strong infrastructure for small bussiness owners to expand their reach, by bringing their products online. Today Globalization Clothingis used by hundreds of shop owners to expand their bussiness. This is possible just due to your trust, support and our constant efforts to make the platform even better. We are working tirelessly to improve the experience of our end users and hope to soon reach 1000+ customers.",
+                          "Globalization Clothing.",
                       }),
                     ],
                   }),

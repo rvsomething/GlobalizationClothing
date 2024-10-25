@@ -19,7 +19,7 @@ const AboutPage = () => {
             <div className='underline'></div>
           </div>
           <p>
-            Globalization Clothing was started by Varun Tiwar in December'21, with an aim to
+            Globalization Clothing was started by Ratik Vohra in December'21, with an aim to
             build a strong infrastructure for small bussiness owners to expand
             their reach, by bringing their products online. Today Globalization Clothingis
             used by hundreds of shop owners to expand their bussiness. This is

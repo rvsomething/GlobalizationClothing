@@ -20,7 +20,7 @@ const Footer = () => {
           const { url, text, id } = link;
           return (
             <div key={id}>
-              {id === 4 ? <a href='mailto:tiwarivarun819.vt33.vt@gmail.com'>{text}</a>
+              {id === 4 ? <a href='mailto:ratik.vohra@gmail.com'>{text}</a>
                 :
                 <Link to={url}>{text}</Link>
               }
