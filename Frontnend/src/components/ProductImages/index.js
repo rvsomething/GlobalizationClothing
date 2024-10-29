@@ -1,44 +1,33 @@
 import React, { useState } from 'react';
 import Wrapper from './styles';
-import ReactImageMagnify from 'react-image-magnify';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css'; // Import styles for zoom
 
 const ProductImages = ({ images = [{ url: '' }] }) => {
   const [main, setMain] = useState(images[0]);
 
   return (
     <Wrapper>
-      <ReactImageMagnify
-        {...{
-          className: 'main',
-          imageClassName: 'main',
-          smallImage: {
-            sizes: '(max-width: 576px) 300px, (min-width: 992px) 500px,',
-            isFluidWidth: true,
-            alt: 'main',
-            src: main.url,
-          },
-          largeImage: {
-            src: main.url,
-            width: 1200,
-            height: 1800,
-          },
-          enlargedImageContainerDimensions: {
-            width: '100%',
-            height: '100%',
-          },
-        }}
-      />
-      <div className='gallery'>
+      <Zoom>
+        <img
+          src={main.url}
+          alt="main"
+          className="main"
+          style={{ width: '100%', cursor: 'pointer' }} // Set width and cursor for better UX
+        />
+      </Zoom>
+      <div className="gallery">
         {images.map((image, index) => {
           return (
             <img
               src={image.url}
               alt={image.filename}
-              className={`${image.url === main.url ? 'active' : null}`}
+              className={`${image.url === main.url ? 'active' : ''}`}
               key={index}
               onClick={() => {
                 setMain(images[index]);
               }}
+              style={{ cursor: 'pointer' }} // Add pointer cursor for thumbnails
             />
           );
         })}
