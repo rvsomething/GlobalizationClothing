@@ -40,7 +40,7 @@ const allowedOrigins = [
   'https://globalizationclothing-frontnend.onrender.com',
   'https://globalizationclothing-admin.onrender.com',
   'https://harmonious-crostata-6fc8a3.netlify.app',
-  'https://globalizationclothing.com/'
+  'https://globalizationclothing.com'
 ];
 
 app.use(cors({
