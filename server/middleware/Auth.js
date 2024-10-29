@@ -5,7 +5,7 @@ const Admin = require('../models/adminModel');
 
 exports.checkUserAuthentication = catchAsyncErrors(async (req, res, next) => {
   const { token } = req.cookies;
-  // console.log("Token:", token);
+  console.log("Token:", cookies);
   if (!token) {
     return next(
       new ErrorHandler('Please login again to access this resource', 401)
