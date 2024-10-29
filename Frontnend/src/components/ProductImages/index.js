@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Wrapper from './styles';
-// import ReactImageMagnify from 'react-image-magnify';
+import ReactImageMagnify from 'react-image-magnify';
 
 const ProductImages = ({ images = [{ url: '' }] }) => {
   const [main, setMain] = useState(images[0]);
 
   return (
     <Wrapper>
-{/*       
+      <ReactImageMagnify
         {...{
           className: 'main',
           imageClassName: 'main',
@@ -27,7 +27,7 @@ const ProductImages = ({ images = [{ url: '' }] }) => {
             height: '100%',
           },
         }}
-       */}
+      />
       <div className='gallery'>
         {images.map((image, index) => {
           return (
