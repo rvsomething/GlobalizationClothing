@@ -19,14 +19,14 @@ const AboutPage = () => {
             <div className='underline'></div>
           </div>
           <p>
-            Globalization Clothing was started by Ratik Vohra in December'21, with an aim to
-            build a strong infrastructure for small bussiness owners to expand
-            their reach, by bringing their products online. Today Globalization Clothingis
-            used by hundreds of shop owners to expand their bussiness. This is
-            possible just due to your trust, support and our constant efforts to
-            make the platform even better. We are working tirelessly to improve
-            the experience of our end users and hope to soon reach 1000+
-            customers.
+            This e-commerce platform was launched in December 2021 with the
+            vision of building a robust infrastructure for small business owners
+            to expand their reach by bringing their products online. Today, it
+            serves hundreds of shop owners, helping them grow their businesses.
+            This success is thanks to your trust, support, and our dedicated
+            efforts to enhance the platform continuously. We are working
+            tirelessly to improve the experience for our users and aim to reach
+            over 1,000 customers soon.
           </p>
         </article>
       </Wrapper>
