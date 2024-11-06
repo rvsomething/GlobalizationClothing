@@ -19,7 +19,7 @@ const AboutPage = () => {
             <div className='underline'></div>
           </div>
           <p>
-            This e-commerce platform was launched in December 2021 with the
+            This e-commerce platform was launched by Shivam Kumar in December 2021 with the
             vision of building a robust infrastructure for small business owners
             to expand their reach by bringing their products online. Today, it
             serves hundreds of shop owners, helping them grow their businesses.
