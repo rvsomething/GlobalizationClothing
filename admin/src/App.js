@@ -10,9 +10,6 @@ import {
   SingleOrderPage,
   SingleProductPage,
 } from './pages';
-import axios from 'axios';
-
-axios.defaults.withCredentials = true;
 
 function App() {
   return (
