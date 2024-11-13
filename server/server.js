@@ -1,39 +1,29 @@
-// load env-vars
+// Load environment variables
 require('dotenv').config();
 
-// requiring dependencies
+// Require dependencies
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-// initialize express
+// Initialize express
 const app = express();
 
-// requiring routers
+// Require routers
 const paymentRouter = require('./routes/paymentRouter');
 const productRouter = require('./routes/productRouter');
 const adminRouter = require('./routes/adminRouter');
 const orderRouter = require('./routes/orderRouter');
 const uploadRouter = require('./routes/uploadRouter');
 
-// requiring middlewares
+// Require middlewares
 const errorMiddleware = require('./middleware/Error');
 
-// require db configs
+// Connect to the database
 const connectToDb = require('./config/db');
-
-// require cloudinary configs
-const cloudinary = require('./config/cloudinary');
-
-// uncaught exception
-process.on('uncaughtException', (err) => {
-  console.log(`Error: ${err.message}`);
-  console.log(`Server shutting down due to uncaught exception`);
-  process.exit(1);
-});
-
-// connect to db
 connectToDb();
+
+// Define allowed origins
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
@@ -43,47 +33,48 @@ const allowedOrigins = [
   'https://globalizationclothing.com'
 ];
 
+// Configure CORS with credentials support
 app.use(cors({
   origin: allowedOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, // Important for allowing cookies and authentication
+  credentials: true,
 }));
 
-
+// Parse JSON and cookies
 app.use(express.json({ limit: '20mb' }));
 app.use(cookieParser());
 
-// basic api route
+// Basic API route
 app.get('/', (req, res) => {
   res.status(200).json({
     success: true,
     message: 'API service running 🚀',
-    
   });
-  console.log('API running');
-
 });
 
-// using routers
+// Use routers
 app.use('/api/payment', paymentRouter);
 app.use('/api/products', productRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/upload', uploadRouter);
 
-// using other middlewares
+// Use error-handling middleware
 app.use(errorMiddleware);
 
-// starting server
+// Start server
 const server = app.listen(process.env.PORT || 5000, () => {
   console.log('Server running');
 });
 
-// unhandled promise rejection
+// Handle uncaught exceptions
+process.on('uncaughtException', (err) => {
+  console.error(`Uncaught Exception: ${err.message}`);
+  process.exit(1);
+});
+
+// Handle unhandled promise rejections
 process.on('unhandledRejection', (err) => {
-  console.log(`Error: ${err.message}`);
-  console.log(`Server shutting down due to unhandled promise rejection`);
-  server.close(() => {
-    process.exit(1);
-  });
+  console.error(`Unhandled Rejection: ${err.message}`);
+  server.close(() => process.exit(1));
 });

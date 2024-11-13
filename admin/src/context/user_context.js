@@ -15,14 +15,14 @@ export const UserProvider = ({ children }) => {
   };
 
   const checkAuth = async () => {
+    setAuthLoading(true);
     try {
-      setAuthLoading(true);
       const response = await axios.post(auth_url);
       const { data } = response.data;
       setUser(data);
-      setAuthLoading(false);
     } catch (error) {
-      console.log(error.response);
+      console.log("Auth error:", error.response ? error.response.data : error);
+    } finally {
       setAuthLoading(false);
     }
   };
