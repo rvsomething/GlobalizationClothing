@@ -123,6 +123,9 @@ process.on("uncaughtException", (err) => {
 
 // connect to db
 connectToDb();
+app.use(express.json({ limit: "20mb" }));
+app.use(cookieParser());
+
 
 // using middlewares
 const allowedOrigins = [
@@ -140,8 +143,6 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json({ limit: "20mb" }));
-app.use(cookieParser());
 
 // basic api route
 app.get("/", (req, res) => {
