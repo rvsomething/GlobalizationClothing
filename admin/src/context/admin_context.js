@@ -31,8 +31,10 @@ export const AdminProvider = ({ children }) => {
   const fetchAdmins = async () => {
     dispatch({ type: GET_ADMINS_BEGIN });
     try {
-      const response = await axios.get(admins_url);
+      const response = await axios.get(admins_url, { withCredentials: true });
+      console.log("respo",response);
       const { data } = response.data;
+      console.log("data",data);
       dispatch({ type: GET_ADMINS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({ type: GET_ADMINS_ERROR });
@@ -41,7 +43,7 @@ export const AdminProvider = ({ children }) => {
 
   const updateAdminPrivilege = async (id, privilege) => {
     try {
-      const response = await axios.put(`${admins_url}${id}`, { privilege });
+      const response = await axios.put(`${admins_url}${id}`, { privilege }, { withCredentials: true });
       const { success, data } = response.data;
       return { success, data };
     } catch (error) {
@@ -52,7 +54,7 @@ export const AdminProvider = ({ children }) => {
 
   const deleteAdmin = async (id) => {
     try {
-      const response = await axios.delete(`${admins_url}${id}`);
+      const response = await axios.delete(`${admins_url}${id}`, { withCredentials: true });
       const { success, message } = response.data;
       return { success, message };
     } catch (error) {
@@ -70,7 +72,7 @@ export const AdminProvider = ({ children }) => {
   const createNewAdmin = async () => {
     const { new_admin } = state;
     try {
-      const response = await axios.post(register_url, new_admin);
+      const response = await axios.post(register_url, new_admin, { withCredentials: true });
       const { success, data } = response.data;
       return { success, data };
     } catch (error) {

@@ -40,7 +40,7 @@ export const OrderProvider = ({ children }) => {
   const fetchOrders = async () => {
     dispatch({ type: GET_ORDERS_BEGIN });
     try {
-      const response = await axios.get(orders_url, { withCredentials: true });
+      const response = await axios.get(orders_url, { withCredentials: true }, { withCredentials: true });
       const { data } = response.data;
       dispatch({ type: GET_ORDERS_SUCCESS, payload: data });
     } catch (error) {
@@ -51,7 +51,7 @@ export const OrderProvider = ({ children }) => {
   const fetchSingleOrder = async (id) => {
     dispatch({ type: GET_SINGLE_ORDER_BEGIN });
     try {
-      const response = await axios.get(`${single_order_url}${id}`, { withCredentials: true });
+      const response = await axios.get(`${single_order_url}${id}`, { withCredentials: true }, { withCredentials: true });
       const { data } = response.data;
       dispatch({ type: GET_SINGLE_ORDER_SUCCESS, payload: data });
     } catch (error) {
