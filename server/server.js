@@ -39,7 +39,7 @@ const allowedOrigins = [
   'http://localhost:3001',
   'https://globalizationclothing-frontnend.onrender.com',
   'https://globalizationclothing-admin.onrender.com',
-  'https://harmonious-crostata-6fc8a3.netlify.app',
+  'https://admin.globalizationclothing.com',
   'https://globalizationclothing.com'
 ];
 
