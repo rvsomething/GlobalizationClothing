@@ -5,7 +5,6 @@ const Admin = require('../models/adminModel');
 
 exports.checkUserAuthentication = catchAsyncErrors(async (req, res, next) => {
   const { token } = req.cookies;
-  console.log("Token:", cookies);
   if (!token) {
     return next(
       new ErrorHandler('Please login again to access this resource', 401)
@@ -15,7 +14,6 @@ exports.checkUserAuthentication = catchAsyncErrors(async (req, res, next) => {
   const user = await Admin.findById(decodedData.id);
   if (!user) {
     new ErrorHandler('User not found', 401);
-    console.log("user not found");
   }
   req.user = user;
   next();
