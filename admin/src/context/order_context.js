@@ -40,7 +40,7 @@ export const OrderProvider = ({ children }) => {
   const fetchOrders = async () => {
     dispatch({ type: GET_ORDERS_BEGIN });
     try {
-      const response = await axios.get(orders_url);
+      const response = await axios.get(orders_url, { withCredentials: true });
       const { data } = response.data;
       dispatch({ type: GET_ORDERS_SUCCESS, payload: data });
     } catch (error) {
@@ -51,7 +51,7 @@ export const OrderProvider = ({ children }) => {
   const fetchSingleOrder = async (id) => {
     dispatch({ type: GET_SINGLE_ORDER_BEGIN });
     try {
-      const response = await axios.get(`${single_order_url}${id}`);
+      const response = await axios.get(`${single_order_url}${id}`, { withCredentials: true });
       const { data } = response.data;
       dispatch({ type: GET_SINGLE_ORDER_SUCCESS, payload: data });
     } catch (error) {
@@ -61,9 +61,11 @@ export const OrderProvider = ({ children }) => {
 
   const updateOrderStatus = async (status, id) => {
     try {
-      const response = await axios.put(`${update_order_status}${id}`, {
-        status,
-      });
+      const response = await axios.put(
+        `${update_order_status}${id}`,
+        { status },
+        { withCredentials: true }
+      );
       const { success, data } = response.data;
       dispatch({ type: UPDATE_ORDER_STATUS, payload: data.orderStatus });
       fetchOrders();
@@ -76,7 +78,7 @@ export const OrderProvider = ({ children }) => {
 
   const deleteOrder = async (id) => {
     try {
-      const response = await axios.delete(`${update_order_status}${id}`);
+      const response = await axios.delete(`${update_order_status}${id}`, { withCredentials: true });
       const { success, message } = response.data;
       return { success, message };
     } catch (error) {

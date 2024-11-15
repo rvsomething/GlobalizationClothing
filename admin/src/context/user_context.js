@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { login_url, auth_url, logout_url } from '../utils/constants';
 
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true; // Set withCredentials globally for Axios
 
 const UserContext = React.createContext();
 
@@ -17,7 +17,7 @@ export const UserProvider = ({ children }) => {
   const checkAuth = async () => {
     try {
       setAuthLoading(true);
-      const response = await axios.post(auth_url);
+      const response = await axios.post(auth_url, {}, { withCredentials: true });
       const { data } = response.data;
       setUser(data);
       setAuthLoading(false);
@@ -29,7 +29,7 @@ export const UserProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post(login_url, { email, password });
+      const response = await axios.post(login_url, { email, password }, { withCredentials: true });
       const { success, data } = response.data;
       setUser(data);
       return { success, data };
@@ -41,7 +41,7 @@ export const UserProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      const response = await axios.get(logout_url);
+      const response = await axios.get(logout_url, { withCredentials: true });
       const { success, message } = response.data;
       setUser(null);
       return { success, message };
@@ -53,7 +53,6 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     checkAuth();
-    // eslint-disable-next-line
   }, []);
 
   return (

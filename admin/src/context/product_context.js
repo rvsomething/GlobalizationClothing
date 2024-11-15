@@ -48,7 +48,7 @@ export const ProductProvider = ({ children }) => {
   const fetchProducts = async () => {
     dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
-      const response = await axios.get(products_url);
+      const response = await axios.get(products_url, { withCredentials: true });
       const { data } = response.data;
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: data });
     } catch (error) {
@@ -59,7 +59,7 @@ export const ProductProvider = ({ children }) => {
   const fetchSingleProduct = async (id) => {
     dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
     try {
-      const response = await axios.get(`${products_url}${id}`);
+      const response = await axios.get(`${products_url}${id}`, { withCredentials: true });
       const { data } = response.data;
       dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: data });
     } catch (error) {
@@ -69,7 +69,7 @@ export const ProductProvider = ({ children }) => {
 
   const deleteProduct = async (id) => {
     try {
-      const response = await axios.delete(`${update_product_url}${id}`);
+      const response = await axios.delete(`${update_product_url}${id}`, { withCredentials: true });
       const { success, message } = response.data;
       return { success, message };
     } catch (error) {
@@ -86,13 +86,7 @@ export const ProductProvider = ({ children }) => {
     }
     if (name === 'colors' || name === 'sizes') {
       value = value.replace(/\s+/g, '');
-      if (value === '') {
-        value = [];
-      } else if (value.indexOf(',') > -1) {
-        value = value.split(',');
-      } else {
-        value = value.split();
-      }
+      value = value === '' ? [] : value.split(',');
     }
     if (name === 'shipping' || name === 'featured') {
       value = e.target.checked;
@@ -108,13 +102,7 @@ export const ProductProvider = ({ children }) => {
     }
     if (name === 'colors' || name === 'sizes') {
       value = value.replace(/\s+/g, '');
-      if (value === '') {
-        value = [];
-      } else if (value.indexOf(',') > -1) {
-        value = value.split(',');
-      } else {
-        value = value.split();
-      }
+      value = value === '' ? [] : value.split(',');
     }
     if (name === 'shipping' || name === 'featured') {
       value = e.target.checked;
@@ -124,7 +112,7 @@ export const ProductProvider = ({ children }) => {
 
   const createNewProduct = async (product) => {
     try {
-      const response = await axios.post(create_new_product, product);
+      const response = await axios.post(create_new_product, product, { withCredentials: true });
       const { success, data } = response.data;
       fetchProducts();
       return { success, data };
@@ -136,9 +124,8 @@ export const ProductProvider = ({ children }) => {
 
   const updateProduct = async (id, product) => {
     try {
-      const response = await axios.put(`${update_product_url}${id}`, product);
+      const response = await axios.put(`${update_product_url}${id}`, product, { withCredentials: true });
       const { success, message } = response.data;
-      // fetchProducts();
       return { success, message };
     } catch (error) {
       const { success, message } = error.response.data;
@@ -149,9 +136,8 @@ export const ProductProvider = ({ children }) => {
   const deleteReview = async (productId, reviewId) => {
     try {
       const response = await axios.delete(`${delete_review}${productId}`, {
-        data: {
-          reviewId,
-        },
+        data: { reviewId },
+        withCredentials: true,
       });
       const { success, message } = response.data;
       fetchSingleProduct(productId);
