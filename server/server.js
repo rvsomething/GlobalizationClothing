@@ -25,12 +25,7 @@ const connectToDb = require('./config/db');
 // require cloudinary configs
 const cloudinary = require('./config/cloudinary');
 
-// uncaught exception
-process.on('uncaughtException', (err) => {
-  console.log(`Error: ${err.message}`);
-  console.log(`Server shutting down due to uncaught exception`);
-  process.exit(1);
-});
+
 
 // connect to db
 connectToDb();
@@ -52,7 +47,12 @@ app.use(cors({
 
 app.use(express.json({ limit: '20mb' }));
 app.use(cookieParser());
-
+// uncaught exception
+process.on('uncaughtException', (err) => {
+  console.log(`Error: ${err.message}`);
+  console.log(`Server shutting down due to uncaught exception`);
+  process.exit(1);
+});
 // basic api route
 app.get('/', (req, res) => {
   res.status(200).json({
