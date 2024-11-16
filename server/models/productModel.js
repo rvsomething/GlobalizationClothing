@@ -37,9 +37,9 @@ const productSchema = mongoose.Schema({
     },
   ],
   sizes: [{ type: String, required: true }],
-  company: {
+  gender: {
     type: String,
-    required: [true, 'Please enter product company'],
+    required: [true, 'Please enter product gender'],
   },
   category: {
     type: String,

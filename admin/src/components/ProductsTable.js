@@ -58,7 +58,7 @@ function ProductsTable({ products }) {
     <SimpleGrid bg='white' p={5} shadow='lg' borderRadius='lg' overflowX='auto'>
       {loading ? (
         <HStack my={8} alignItems='center' justifyContent='center'>
-          <Spinner size='lg' color='brown.500' />
+          <Spinner size='lg' color='green.500' />
         </HStack>
       ) : (
         <Table variant='simple'>
@@ -73,7 +73,7 @@ function ProductsTable({ products }) {
           </Thead>
           <Tbody>
             {products.map((product, index) => {
-              const { image, name, price, stock, category, company, id } =
+              const { image, name, price, stock, category, gender, id } =
                 product;
               return (
                 <Tr key={index}>
@@ -96,8 +96,8 @@ function ProductsTable({ products }) {
                   <Td>
                     <VStack alignItems='flex-start' spacing={1}>
                       <Text as='b'>{category.toUpperCase()}</Text>
-                      <Text fontSize='sm' color='brown.500'>
-                        {company}
+                      <Text fontSize='sm' color='green.500'>
+                        {gender}
                       </Text>
                     </VStack>
                   </Td>

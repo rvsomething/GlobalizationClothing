@@ -34,7 +34,7 @@ function CreateNewProductModal() {
       colors,
       sizes,
       category,
-      company,
+      gender,
       shipping,
       featured,
     },
@@ -82,7 +82,7 @@ function CreateNewProductModal() {
       colors.length < 1 ||
       sizes.length < 1 ||
       !category ||
-      !company
+      !gender
     ) {
       return toast({
         position: 'top',
@@ -111,7 +111,7 @@ function CreateNewProductModal() {
       colors,
       sizes,
       category,
-      company,
+      gender,
       shipping,
       featured,
       images: imageList,
@@ -140,7 +140,7 @@ function CreateNewProductModal() {
 
   return (
     <>
-      <Button colorScheme='brown' onClick={onOpen}>
+      <Button colorScheme='green' onClick={onOpen}>
         Create New Product
       </Button>
 
@@ -156,7 +156,7 @@ function CreateNewProductModal() {
                 ref={initialRef}
                 placeholder='Product Name'
                 name='name'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={name}
                 onChange={updateNewProductDetails}
               />
@@ -168,7 +168,7 @@ function CreateNewProductModal() {
                 type='number'
                 placeholder='Product Price'
                 name='price'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={price}
                 onChange={updateNewProductDetails}
               />
@@ -180,7 +180,7 @@ function CreateNewProductModal() {
                 type='number'
                 placeholder='Product Stock'
                 name='stock'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={stock}
                 onChange={updateNewProductDetails}
               />
@@ -191,7 +191,7 @@ function CreateNewProductModal() {
               <Textarea
                 placeholder='Product Description'
                 name='description'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={description}
                 onChange={updateNewProductDetails}
               />
@@ -202,19 +202,19 @@ function CreateNewProductModal() {
               <Input
                 placeholder='Product Category'
                 name='category'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={category}
                 onChange={updateNewProductDetails}
               />
             </FormControl>
 
             <FormControl mt={4}>
-              <FormLabel>Company</FormLabel>
+              <FormLabel>gender</FormLabel>
               <Input
-                placeholder='Product Company'
-                name='company'
-                focusBorderColor='brown.500'
-                value={company}
+                placeholder='Product gender'
+                name='gender'
+                focusBorderColor='green.500'
+                value={gender}
                 onChange={updateNewProductDetails}
               />
             </FormControl>
@@ -224,7 +224,7 @@ function CreateNewProductModal() {
               <Input
                 placeholder='Product Sizes (comma separated)'
                 name='sizes'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={sizes}
                 onChange={updateNewProductDetails}
               />
@@ -236,7 +236,7 @@ function CreateNewProductModal() {
               <Input
                 placeholder='Product Colors (comma separated)'
                 name='colors'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={colors}
                 onChange={updateNewProductDetails}
               />
@@ -247,11 +247,11 @@ function CreateNewProductModal() {
             <FormControl mt={4}>
               <FormLabel>Images</FormLabel>
               <Center
-                bg='brown.50'
+                bg='green.50'
                 minHeight={100}
                 my={5}
                 borderWidth={3}
-                borderColor='brown.200'
+                borderColor='green.200'
                 borderStyle='dashed'
                 borderRadius='lg'
                 {...getRootProps()}
@@ -297,7 +297,7 @@ function CreateNewProductModal() {
             <FormControl mt={4}>
               <Checkbox
                 name='shipping'
-                colorScheme='brown'
+                colorScheme='green'
                 isChecked={shipping}
                 onChange={updateNewProductDetails}
               >
@@ -308,7 +308,7 @@ function CreateNewProductModal() {
             <FormControl mt={4}>
               <Checkbox
                 name='featured'
-                colorScheme='brown'
+                colorScheme='green'
                 isChecked={featured}
                 onChange={updateNewProductDetails}
               >
@@ -324,7 +324,7 @@ function CreateNewProductModal() {
             <Button
               isLoading={loading}
               loadingText='Creating Product'
-              colorScheme='brown'
+              colorScheme='green'
               onClick={handleSubmit}
             >
               Save

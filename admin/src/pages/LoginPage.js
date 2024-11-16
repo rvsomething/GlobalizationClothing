@@ -64,7 +64,7 @@ export default function LoginPage() {
   }
 
   return (
-    <Flex minH={'100vh'} align={'center'} justify={'center'} bg={'gray.50'}>
+    <Flex minH={'100vh'} align={'center'} justify={'center'} >
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Image src={logo} alt='logo' w='50%' />
@@ -77,7 +77,7 @@ export default function LoginPage() {
                 type='email'
                 placeholder='Enter your email address'
                 variant='filled'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -88,7 +88,7 @@ export default function LoginPage() {
                 type='password'
                 placeholder='Enter your password'
                 variant='filled'
-                focusBorderColor='brown.500'
+                focusBorderColor='green.500'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -96,10 +96,10 @@ export default function LoginPage() {
             <Stack spacing={10}>
               <Button
                 isLoading={loading}
-                bg={'brown.400'}
+                bg={'green.400'}
                 color={'white'}
                 _hover={{
-                  bg: 'brown.500',
+                  bg: 'green.500',
                 }}
                 onClick={handleSubmit}
               >

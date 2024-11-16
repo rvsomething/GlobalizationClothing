@@ -5,7 +5,7 @@ import { checkObjectProperties } from '../../utils/helpers';
 import { useCartContext } from '../../context/cart_context';
 import { useOrderContext } from '../../context/order_context';
 import { Link } from 'react-router-dom';
-
+import FeaturedProducts from '../../components/FeaturedProducts';
 const CheckoutPage = () => {
   const {
     shipping: {
@@ -47,6 +47,7 @@ const CheckoutPage = () => {
               <Link to='/products' className='btn'>
                 fill it
               </Link>
+              <FeaturedProducts />
             </div>
           ) : (
             <StripeCheckout />

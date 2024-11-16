@@ -23,7 +23,47 @@ export const links = [
     text: 'products',
     url: '/products',
   },
+  // {
+  //   id: 4,
+  //   text: 'men',
+  //   submenu: [
+  //     { id: 1, text: 'T-Shirts', url: '/products/men/tshirts' },
+  //     { id: 2, text: 'Pants', url: '/products/men/pants' },
+  //     { id: 3, text: 'Shirts', url: '/products/men/shirts' },
+  //     { id: 4, text: 'Jeans', url: '/products/men/jeans' },
+  //   ],
+  // },
+  // {
+  //   id: 5,
+  //   text: 'women',
+  //   submenu: [
+  //     { id: 1, text: 'Dresses', url: '/products/women/dresses' },
+  //     { id: 2, text: 'T-Shirts', url: '/products/women/tshirts' },
+  //     { id: 3, text: 'Pants', url: '/products/women/pants' },
+  //     { id: 4, text: 'Jeans', url: '/products/women/jeans' },
+  //   ],
+  // },
+  // {
+  //   id: 6,
+  //   text: 'kids',
+  //   submenu: [
+  //     { id: 1, text: 'T-Shirts', url: '/products/kids/tshirts' },
+  //     { id: 2, text: 'Pants', url: '/products/kids/pants' },
+  //     { id: 3, text: 'Shirts', url: '/products/kids/shirts' },
+  //     { id: 4, text: 'Jeans', url: '/products/kids/jeans' },
+  //   ],
+  // },
+  // {
+  //   id: 7,
+  //   text: 'accessories',
+  //   submenu: [
+  //     { id: 1, text: 'Bags', url: '/products/accessories/bags' },
+  //     { id: 2, text: 'Hats', url: '/products/accessories/hats' },
+  //     { id: 3, text: 'Watches', url: '/products/accessories/watches' },
+  //   ],
+  // },
 ];
+
 
 export const socialLinks = [
   {

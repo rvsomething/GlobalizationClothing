@@ -1,17 +1,20 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
+
+
   .form-control {
     margin-bottom: 1.25rem;
     h5 {
       margin-bottom: 0.5rem;
     }
+    
   }
   .search-input {
     padding: 0.5rem;
-    background: var(--clr-grey-10);
+    background: white;
     border-radius: var(--radius);
-    border-color: transparent;
+    border-color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
   }
   .search-input::placeholder {
@@ -27,13 +30,14 @@ const Wrapper = styled.section`
     border: none;
     border-bottom: 1px solid transparent;
     letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
+    color: black;
     cursor: pointer;
   }
   .active {
-    border-color: var(--clr-grey-5);
+    border-color: var(--clr-primary-5);
+    color: var(--clr-primary-5);
   }
-  .company {
+  .gender {
     background: var(--clr-grey-10);
     border-radius: var(--radius);
     border-color: transparent;

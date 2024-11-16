@@ -22,7 +22,7 @@ function DashboardCards() {
       title: 'Total Orders',
       value: orders.length,
       icon: FaShoppingCart,
-      color: 'brown.500',
+      color: 'green.500',
     },
     {
       title: 'Pending Orders',
@@ -66,7 +66,7 @@ function DashboardCards() {
               </Heading>
             </Box>
             <Spacer />
-            <Square size='60px' bg='brown.400' borderRadius='lg'>
+            <Square size='60px' bg='green.400' borderRadius='lg'>
               <Icon as={icon} color='white' />
             </Square>
           </Flex>

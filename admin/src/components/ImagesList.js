@@ -24,7 +24,7 @@ function ImagesList({ images = [{ url: '' }] }) {
                 onClick={() => setMainImage(images[index])}
               />
               {mainImage.url === url && (
-                <Box w='5px' h='5px' bg='brown.500' borderRadius='full' />
+                <Box w='5px' h='5px' bg='green.500' borderRadius='full' />
               )}
             </VStack>
           );

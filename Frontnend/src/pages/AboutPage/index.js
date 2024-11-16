@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import Wrapper from './styles';
 import { PageHero } from '../../components';
-// import aboutImg from '../../assets/hero-bcg.avif';
+import {  Services, Contact } from '../../components';
+
 
 const AboutPage = () => {
   useEffect(() => {
@@ -30,6 +31,8 @@ const AboutPage = () => {
           </p>
         </article>
       </Wrapper>
+      <Services />
+      <Contact />
     </main>
   );
 };

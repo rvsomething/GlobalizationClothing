@@ -15,8 +15,12 @@ const Wrapper = styled.section`
     width: 248px;
     margin: 0 auto;
     text-align: center;
-    color: #000000;
-    background-color: #fffff;
+    color: rgb(0, 255, 72);
+    font-weight: bold;
+    border: solid 2px rgb(0, 255, 72);
+    background-color: transparent;
+
+    
   }
   @media (min-width: 576px) {
     .featured {

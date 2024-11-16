@@ -31,7 +31,7 @@ function SingleProductInfo({ product }) {
     rating = 0,
     colors = [],
     sizes = [],
-    company = '',
+    gender = '',
     category = '',
     stock = 0,
     numberOfReviews = 0,
@@ -139,8 +139,8 @@ function SingleProductInfo({ product }) {
             </Td>
           </Tr>
           <Tr>
-            <Td>Company</Td>
-            <Td>{company}</Td>
+            <Td>gender</Td>
+            <Td>{gender}</Td>
           </Tr>
           <Tr>
             <Td>Category</Td>

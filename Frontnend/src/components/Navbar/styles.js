@@ -5,6 +5,35 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+.nav-item {
+  position: relative;
+}
+
+.has-dropdown .dropdown-toggle {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 10px;
+  list-style: none;
+  border: 1px solid #ddd;
+  display: none;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+.sidebar .dropdown {
+  position: static;
+  padding-left: 20px;
+  display: block;
+}
 
   .nav-center {
     width: 90vw;

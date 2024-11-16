@@ -31,7 +31,7 @@ const initialState = {
     colors: [],
     sizes: [],
     category: '',
-    company: '',
+    gender: '',
     shipping: true,
     featured: false,
   },

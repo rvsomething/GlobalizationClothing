@@ -12,7 +12,7 @@ function PreLoader() {
       alignItems='center'
     >
       <Image src={logo} width='150px' />
-      <Progress size='xs' w='40%' colorScheme='brown' isIndeterminate />
+      <Progress size='xs' w='40%' colorScheme='green' isIndeterminate />
       <HStack>
         <Text fontWeight='300' color='gray.400'>
           search less, wear more

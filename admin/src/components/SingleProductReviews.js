@@ -36,7 +36,7 @@ function SingleProductReviews({ reviews, productId }) {
     <>
       {loading ? (
         <VStack bg='white' p={8} borderRadius='lg' shadow='sm'>
-          <Spinner size='lg' color='brown.500' />
+          <Spinner size='lg' color='green.500' />
         </VStack>
       ) : (
         <VStack
@@ -60,7 +60,7 @@ function SingleProductReviews({ reviews, productId }) {
                   <Stars stars={rating} />
                   <Text>{comment}</Text>
                   <Stack direction={{ base: 'column', sm: 'row' }}>
-                    <Text as='b' color='brown.500'>
+                    <Text as='b' color='green.500'>
                       {name}
                     </Text>
                     <MdAlternateEmail />

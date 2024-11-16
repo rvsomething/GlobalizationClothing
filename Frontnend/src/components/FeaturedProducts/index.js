@@ -24,10 +24,10 @@ const FeaturedProducts = () => {
 
   return (
     <div>
-      <h1>
+      <h3>
   <span className="word">Featured</span>
   <span className="word">Product<span className="superscript">s</span> </span>
-</h1>
+</h3>
     <Wrapper className='section'>
     
       <div className='section-center featured'>
@@ -39,7 +39,7 @@ const FeaturedProducts = () => {
         })}
       </div>
       <br></br>
-      <Link to='/products' className='btn'>
+      <Link to='/products' className='btn' >
         all products
       </Link>
     </Wrapper>

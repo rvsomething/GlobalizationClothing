@@ -60,7 +60,7 @@ function OrdersTable({ orders }) {
     <SimpleGrid bg='white' p={5} shadow='lg' borderRadius='lg' overflowX='auto'>
       {loading ? (
         <HStack my={8} alignItems='center' justifyContent='center'>
-          <Spinner size='lg' color='brown.500' />
+          <Spinner size='lg' color='green.500' />
         </HStack>
       ) : (
         <Table variant='simple'>

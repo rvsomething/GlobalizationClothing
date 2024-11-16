@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Wrapper = styled.footer`
   background: var(--clr-black);
   color: var(--clr-grey-6);
-  padding: 2rem 0;
+  padding: 1rem 0;
   text-align: center;
 
   /* Top Level Layout */
@@ -23,7 +23,7 @@ const Wrapper = styled.footer`
   }
 
   .logo .footer-logo {
-    max-width: 250px;
+    max-width: 200px;
 
   }
 
@@ -34,9 +34,10 @@ const Wrapper = styled.footer`
     }
     p {
       margin: 0.5rem 0;
+      color:white;
     }
     a {
-      color: var(--clr-grey-6);
+      color: white;
       text-decoration: none;
       display: block;
       margin: 0.2rem 0;
@@ -47,7 +48,7 @@ const Wrapper = styled.footer`
   }
 
   .map iframe {
-    width: 100%;
+    width: 90%;
     height: 100px;
     border-radius: 8px;
   }
@@ -64,7 +65,7 @@ const Wrapper = styled.footer`
       display: flex;
       gap: 1rem;
       svg {
-        color: var(--clr-grey-6);
+        color: white;
         font-size: 1.5rem;
       }
       svg:hover {
@@ -75,6 +76,7 @@ const Wrapper = styled.footer`
     p {
       margin: 0;
       font-size: 0.875rem;
+      color:white;
     }
   }
 

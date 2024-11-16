@@ -37,12 +37,12 @@
   }
 }
 
-h1 {
+h3 {
     text-align: center;
     align-items: center;
   color: rgb(0, 0, 0);
   font-family: "Playfair Display", Vidaloka, serif;
-  font-size: 8rem;
+  font-size: 6rem;
 
   line-height: 0.85;
   perspective: 500px;

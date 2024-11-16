@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  background: var(--clr-primary-3);
+  background: white;
+  // border: solid 2px var(--clr-primary-4);
   width: 100%;
-  min-height: 20vh;
+  min-height: 5vh;
   display: flex;
-  align-items: center;
+  padding: 0.5rem;
+  align-items: left;
+  
 
-  color: var(--clr-primary-10);
+  color: var(--clr-primary-4);
   a { 
-    color: var(--clr-primary-10);
+    color: black;
     padding: 0.5rem;
     transition: var(--transition);
   }

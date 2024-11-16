@@ -8,13 +8,14 @@ const Filters = () => {
   const {
     filters: {
       text,
-      company,
+      gender,
       category,
       color,
       min_price,
       max_price,
       price,
       shipping,
+      size
     },
     updateFilters,
     clearFilters,
@@ -22,9 +23,11 @@ const Filters = () => {
   } = useFilterContext();
 
   const categories = getUniqueValues(all_products, 'category');
-  const companies = getUniqueValues(all_products, 'company');
+  const companies = getUniqueValues(all_products, 'gender');
   const colors = getUniqueValues(all_products, 'colors');
-
+  const sizes = getUniqueValues(all_products, 'sizes');
+  console.log(sizes);
+console.log(colors);
   return (
     <Wrapper>
       <div className='content'>
@@ -65,12 +68,12 @@ const Filters = () => {
           {/* end categories input */}
           {/* companies input */}
           <div className='form-control'>
-            <h5>company</h5>
+            <h5>gender</h5>
             <select
-              name='company'
-              id='company'
-              className='company'
-              value={company}
+              name='gender'
+              id='gender'
+              className='gender'
+              value={gender}
               onChange={updateFilters}
             >
               {companies.map((item, index) => {
@@ -122,6 +125,45 @@ const Filters = () => {
             </div>
           </div>
           {/* end colors input */}
+          {/* sizes input */}
+          <div className='form-control'>
+            <h5>sizes</h5>
+            <div className='sizes'>
+              {sizes.map((item, index) => {
+                if (item === 'all') {
+                  return (
+                    <button
+                      key={index}
+                      name='size'
+                      data-size='all'
+                      className={`${
+                        category === item.toLowerCase() ? 'active' : null
+                      }`}
+                      onClick={updateFilters}
+                    >
+                      all
+                    </button>
+                  );
+                }
+
+                return (
+                  <button
+                    key={index}
+                    name='size'
+                    data-size={item}
+                    // style={{ background: item }}
+                    className={`${
+                      size === item
+                    }`}
+                    onClick={updateFilters}
+                  >
+                    {item }
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          {/* end sizes input */}
           {/* price input */}
           <div className='form-control'>
             <h5>price</h5>

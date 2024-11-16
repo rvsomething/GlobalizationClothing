@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Wrapper, WrapperDiv } from './styles';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useOrderContext } from '../../context/order_context';
 import { useCartContext } from '../../context/cart_context';
-import { Country, State, City } from 'country-state-city';
+import { Country, State } from 'country-state-city';
 
 const countries = [Country.getCountryByCode('IN')];
-const states = State.getStatesOfCountry('IN');
-const cities = City.getCitiesOfCountry('IN');
 
 function ShippingForm({ confirmShipping }) {
   const {
@@ -20,6 +18,17 @@ function ShippingForm({ confirmShipping }) {
     updateShipping,
   } = useOrderContext();
   const { cart } = useCartContext();
+
+  const [states, setStates] = useState([]);
+
+  useEffect(() => {
+    // Get the list of states for India using country-state-city package
+    const stateData = State.getStatesOfCountry('IN');
+    setStates(stateData.map((state) => ({
+      value: state.stateCode,
+      label: state.name,
+    })));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,19 +44,19 @@ function ShippingForm({ confirmShipping }) {
       return toast.error('Enter your Address');
     }
     if (!postal_code) {
-      return toast.error('Enter your Zip Code');
+      return toast.error('Enter your Pin Code');
     }
     if (!zipRegex.test(postal_code)) {
-      return toast.error('Enter Valid Zip Code');
+      return toast.error('Enter a valid Pin Code');
     }
     if (!city) {
-      return toast.error('Enter your City');
+      return toast.error('Enter your City/District');
     }
     if (!state) {
-      return toast.error('Enter your State');
+      return toast.error('Select your State');
     }
     if (!country) {
-      return toast.error('Enter your Country');
+      return toast.error('Select your Country');
     }
     return confirmShipping();
   };
@@ -72,93 +81,84 @@ function ShippingForm({ confirmShipping }) {
           <h2>Shipping</h2>
         </div>
         <form onSubmit={handleSubmit}>
-          {/* name */}
+          {/* Name */}
           <div className='form-control'>
             <input
               type='text'
               name='name'
               className='input'
-              placeholder='Full name'
+              placeholder='Full Name'
               value={name}
               onChange={updateShipping}
             />
           </div>
-          {/* end name */}
-          {/* phone */}
+
+          {/* Phone Number */}
           <div className='form-control'>
             <input
               type='number'
               name='phone_number'
               className='input'
-              placeholder='Phone number'
+              placeholder='Phone Number'
               value={phone_number}
               onChange={updateShipping}
             />
           </div>
-          {/* end phone */}
-          {/* address line 1 */}
+
+          {/* Address Line 1 */}
           <div className='form-control'>
             <input
               type='text'
               name='line1'
               className='input'
-              placeholder='Address'
+              placeholder='Town/Village'
               value={line1}
               onChange={updateShipping}
             />
           </div>
-          {/* end address line 1 */}
-          {/* address postal code */}
+{/* City/District (Text Input) */}
+          <div className='form-control'>
+            <input
+              type='text'
+              name='city'
+              className='input'
+              placeholder='Town/Village'
+              value={city}
+              onChange={updateShipping}
+            />
+          </div>
+          {/* Pin Code */}
           <div className='form-control'>
             <input
               type='number'
               name='postal_code'
               className='input'
-              placeholder='Zip Code'
+              placeholder='Pin Code'
               value={postal_code}
               onChange={updateShipping}
             />
           </div>
-          {/* end address postal code */}
-          {/* address city */}
-          <div className='form-control'>
-            <select
-              name='city'
-              className='input sort-input'
-              value={city}
-              onChange={updateShipping}
-            >
-              <option value=''>Select City</option>
-              {cities.map((item, index) => {
-                return (
-                  <option key={index} value={item.isoCode}>
-                    {item.name}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-          {/* end address city */}
-          {/* address state */}
+
+          
+
+          {/* State Dropdown */}
           <div className='form-control'>
             <select
               name='state'
               className='input sort-input'
-              value={state}
+              value={state || ''}
               onChange={updateShipping}
             >
               <option value=''>Select State</option>
-              {states.map((item, index) => {
-                return (
-                  <option key={index} value={item.stateCode}>
-                    {item.name}
-                  </option>
-                );
-              })}
+              {states.map((item, index) => (
+                <option key={index} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
             </select>
           </div>
-          {/* end address state */}
-          {/* address country */}
+
+          {/* Country Dropdown */}
           <div className='form-control'>
             <select
               name='country'
@@ -167,18 +167,17 @@ function ShippingForm({ confirmShipping }) {
               onChange={updateShipping}
             >
               <option value=''>Select Country</option>
-              {countries.map((item, index) => {
-                return (
-                  <option key={index} value={item.countryCode}>
-                    {item.name}
-                  </option>
-                );
-              })}
+              {countries.map((item, index) => (
+                <option key={index} value={item.countryCode}>
+                  {item.name}
+                </option>
+              ))}
             </select>
           </div>
-          {/* end address country */}
+
+          {/* Submit Button */}
           <button type='submit' className='btn shipping-btn'>
-            confirm
+            Confirm
           </button>
         </form>
       </div>

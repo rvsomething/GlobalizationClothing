@@ -19,9 +19,10 @@ const initialState = {
   sort: 'price-lowest',
   filters: {
     text: '',
-    company: 'all',
+    gender: 'all',
     category: 'all',
     color: 'all',
+    size: 'all',
     min_price: 0,
     max_price: 0,
     price: 0,
@@ -58,6 +59,9 @@ export const FilterProvider = ({ children }) => {
 
     if (name === 'color') {
       value = e.target.dataset.color;
+    }
+    if (name === 'size') {
+      value = e.target.dataset.size;
     }
 
     if (name === 'price') {

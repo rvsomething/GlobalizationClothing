@@ -8,19 +8,19 @@ const Services = () => {
       
       <div className='section-center'>
       
-        <article className='header'>
-        <div className="roller">
+        <article>
+        <div className='title'>
         
-        <div id="rolltext">
-          <h2>Your Wish</h2><br></br>
-          <h2>Our Command</h2>
-        </div>
-      </div>
-          <p>
-            Customer satisfaction is the top-most priorty for TomperWear. It is
+        <div>
+          <h2>Your Wish Our Command</h2>
+          
+        </div><p>
+            Customer satisfaction is the top-most priorty for Globalization Clothing. It is
             the only the trust and support of our customers that we are now
             reaching greater heights.
           </p>
+      </div>
+          
         </article>
         <div className='services-center'>
           {services.map((service) => {

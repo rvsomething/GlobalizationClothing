@@ -49,7 +49,7 @@ const SingleProductPage = () => {
     numberOfReviews,
     reviews = [],
     _id: sku,
-    company,
+    gender,
     images,
   } = product;
 
@@ -89,7 +89,7 @@ const SingleProductPage = () => {
             </p>
             <p className='info'>
               <span>Brand : </span>
-              {company}
+              {gender}
             </p>
             <hr />
             {stock > 0 && (

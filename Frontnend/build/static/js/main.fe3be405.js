@@ -30271,7 +30271,7 @@
         gr = xl.section(
           er ||
             (er = Mi([
-              '\n  .form-control {\n    margin-bottom: 1.25rem;\n    h5 {\n      margin-bottom: 0.5rem;\n    }\n  }\n  .search-input {\n    padding: 0.5rem;\n    background: var(--clr-grey-10);\n    border-radius: var(--radius);\n    border-color: transparent;\n    letter-spacing: var(--spacing);\n  }\n  .search-input::placeholder {\n    text-transform: capitalize;\n  }\n\n  button {\n    display: block;\n    margin: 0.25em 0;\n    padding: 0.25rem 0;\n    text-transform: capitalize;\n    background: transparent;\n    border: none;\n    border-bottom: 1px solid transparent;\n    letter-spacing: var(--spacing);\n    color: var(--clr-grey-5);\n    cursor: pointer;\n  }\n  .active {\n    border-color: var(--clr-grey-5);\n  }\n  .company {\n    background: var(--clr-grey-10);\n    border-radius: var(--radius);\n    border-color: transparent;\n    padding: 0.25rem;\n  }\n  .colors {\n    display: flex;\n    align-items: center;\n  }\n  .color-btn {\n    display: inline-block;\n    width: 1rem;\n    height: 1rem;\n    border-radius: 50%;\n    background: #222;\n    margin-right: 0.5rem;\n    border: none;\n    cursor: pointer;\n    opacity: 0.5;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    svg {\n      font-size: 0.5rem;\n      color: var(--clr-white);\n    }\n  }\n  .all-btn {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-right: 0.5rem;\n    opacity: 0.5;\n  }\n  .active {\n    opacity: 1;\n  }\n  .all-btn .active {\n    text-decoration: underline;\n  }\n  .price {\n    margin-bottom: 0.25rem;\n  }\n  .shipping {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    align-items: center;\n    text-transform: capitalize;\n    column-gap: 0.5rem;\n    font-size: 1rem;\n  }\n  .clear-btn {\n    background: var(--clr-red-dark);\n    color: var(--clr-white);\n    padding: 0.25rem 0.5rem;\n    border-radius: var(--radius);\n  }\n  @media (min-width: 768px) {\n    .content {\n      position: sticky;\n      top: 1rem;\n    }\n  }\n',
+              '\n  .form-control {\n    margin-bottom: 1.25rem;\n    h5 {\n      margin-bottom: 0.5rem;\n    }\n  }\n  .search-input {\n    padding: 0.5rem;\n    background: var(--clr-grey-10);\n    border-radius: var(--radius);\n    border-color: transparent;\n    letter-spacing: var(--spacing);\n  }\n  .search-input::placeholder {\n    text-transform: capitalize;\n  }\n\n  button {\n    display: block;\n    margin: 0.25em 0;\n    padding: 0.25rem 0;\n    text-transform: capitalize;\n    background: transparent;\n    border: none;\n    border-bottom: 1px solid transparent;\n    letter-spacing: var(--spacing);\n    color: var(--clr-grey-5);\n    cursor: pointer;\n  }\n  .active {\n    border-color: var(--clr-grey-5);\n  }\n  .gender {\n    background: var(--clr-grey-10);\n    border-radius: var(--radius);\n    border-color: transparent;\n    padding: 0.25rem;\n  }\n  .colors {\n    display: flex;\n    align-items: center;\n  }\n  .color-btn {\n    display: inline-block;\n    width: 1rem;\n    height: 1rem;\n    border-radius: 50%;\n    background: #222;\n    margin-right: 0.5rem;\n    border: none;\n    cursor: pointer;\n    opacity: 0.5;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    svg {\n      font-size: 0.5rem;\n      color: var(--clr-white);\n    }\n  }\n  .all-btn {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-right: 0.5rem;\n    opacity: 0.5;\n  }\n  .active {\n    opacity: 1;\n  }\n  .all-btn .active {\n    text-decoration: underline;\n  }\n  .price {\n    margin-bottom: 0.25rem;\n  }\n  .shipping {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    align-items: center;\n    text-transform: capitalize;\n    column-gap: 0.5rem;\n    font-size: 1rem;\n  }\n  .clear-btn {\n    background: var(--clr-red-dark);\n    color: var(--clr-white);\n    padding: 0.25rem 0.5rem;\n    border-radius: var(--radius);\n  }\n  @media (min-width: 768px) {\n    .content {\n      position: sticky;\n      top: 1rem;\n    }\n  }\n',
             ]))
         ),
         yr = function (e, t) {
@@ -30341,7 +30341,7 @@
               r = e.filters,
               s = r.text,
               c = r.category,
-              m = r.company,
+              m = r.gender,
               g = r.color,
               y = r.price,
               S = r.shipping,
@@ -30357,7 +30357,7 @@
                 })),
               'all' !== m &&
                 (R = R.filter(function (e) {
-                  return e.company === m;
+                  return e.gender === m;
                 })),
               'all' !== g &&
                 (R = R.filter(function (e) {
@@ -30385,7 +30385,7 @@
                   {},
                   {
                     text: '',
-                    company: 'all',
+                    gender: 'all',
                     category: 'all',
                     color: 'all',
                     price: e.filters.max_price,
@@ -30403,7 +30403,7 @@
           sort: 'price-lowest',
           filters: {
             text: '',
-            company: 'all',
+            gender: 'all',
             category: 'all',
             color: 'all',
             min_price: 0,
@@ -30472,7 +30472,7 @@
           var e = Mr(),
             t = e.filters,
             o = t.text,
-            d = t.company,
+            d = t.gender,
             a = t.category,
             n = t.color,
             u = t.min_price,
@@ -30483,7 +30483,7 @@
             s = e.clearFilters,
             c = e.all_products,
             m = tC(c, 'category'),
-            g = tC(c, 'company'),
+            g = tC(c, 'gender'),
             y = tC(c, 'colors');
           return (0, It.jsx)(gr, {
             children: (0, It.jsxs)('div', {
@@ -30520,11 +30520,11 @@
                     (0, It.jsxs)('div', {
                       className: 'form-control',
                       children: [
-                        (0, It.jsx)('h5', { children: 'company' }),
+                        (0, It.jsx)('h5', { children: 'gender' }),
                         (0, It.jsx)('select', {
-                          name: 'company',
-                          id: 'company',
-                          className: 'company',
+                          name: 'gender',
+                          id: 'gender',
+                          className: 'gender',
                           value: d,
                           onChange: r,
                           children: g.map(function (e, t) {
@@ -33468,7 +33468,7 @@
             g = u.reviews,
             y = void 0 === g ? [] : g,
             S = u._id,
-            R = u.company,
+            R = u.gender,
             A = u.images;
           return (
             (0, e.useEffect)(

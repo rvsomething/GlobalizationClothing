@@ -47,7 +47,7 @@ const Footer = () => {
           <iframe
             title="Location Map"
             src="https://www.google.com/maps/embed?pb=!1m18... (embed URL here)"
-            width="100%"
+            width="90%"
             height="100%"
             frameBorder="0"
             allowFullScreen=""
