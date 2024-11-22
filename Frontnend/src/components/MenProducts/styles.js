@@ -1,4 +1,35 @@
+import styled from 'styled-components';
 
+const Wrapper = styled.section`
+
+  .featured {
+    display: grid;
+    gap: 1.5rem;
+    img {
+      height: 300px;
+      border: solid 5px rgb(26 115 232);
+      align-item:center;
+    }
+  }
+  .btn {
+    display: block;
+    width: 248px;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(26 115 232);
+    font-weight: bold;
+    border: solid 2px rgb(26 115 232);
+    background-color: white;
+
+    
+  }
+  @media (min-width: 576px) {
+    .featured {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    }
+  }
+
+  
 @keyframes pop-word {
   to {
     transform: rotateX(0);
@@ -42,8 +73,9 @@ h3 {
     align-items: center;
   color: rgb(0, 0, 0);
   font-family: "Playfair Display", Vidaloka, serif;
-  font-size: 6rem;
-
+  font-size: 4.5rem;
+display : flex;
+  justify-content: center;
   line-height: 0.85;
   perspective: 500px;
 }
@@ -64,7 +96,7 @@ h3 {
 
   animation-delay: 1.5s;
 
-  color: rgb(0, 255, 72);
+  color: rgb(26 115 232);
 }
 
 .superscript {
@@ -167,3 +199,7 @@ h3 {
     --size: 6rem;
   }
 }
+
+`;
+
+export default Wrapper;

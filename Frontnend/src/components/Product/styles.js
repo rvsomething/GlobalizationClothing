@@ -3,14 +3,15 @@ import styled from 'styled-components';
 const Wrapper = styled.article`
   .container {
     position: relative;
-    background: var(--clr-black);
+    background: white;
     border-radius: var(--radius);
   }
   img {
     width: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: var(--radius);
+    border: 1px solid var(--clr-black);
     transition: var(--transition);
   }
   .link {
@@ -25,7 +26,7 @@ const Wrapper = styled.article`
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    transition: var(--transition);
+    transition: transform .2s;
     opacity: 0;
     cursor: pointer;
     svg {
@@ -33,12 +34,12 @@ const Wrapper = styled.article`
       color: var(--clr-white);
     }
   }
-  // .container:hover img {
-  //   opacity: 0.25;
-  // }
-  // .container:hover .link {
-  //   opacity: 1;
-  // }
+  .container:hover img {
+transform: scale(1.1);
+  }
+  .container:hover .link {
+transform: scale(1.1);
+  }
   footer {
     margin-top: 1rem;
     display: flex;

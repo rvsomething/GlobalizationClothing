@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavContainer from './styles';
 import logo from '../../assets/logo.png';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaCaretDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { links } from '../../utils/constants';
 import CartButtons from '../CartButtons/';
@@ -22,7 +22,7 @@ const Nav = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="" />
+            <img src={logo} alt="Logo" />
           </Link>
           <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
@@ -30,15 +30,17 @@ const Nav = () => {
         </div>
         <ul className="nav-links">
           {links.map((link) => {
-            const { url, text, id, submenu } = link;
+            const { id, text, url, submenu } = link;
             return (
               <li key={id} className="nav-item">
                 <div
                   className={`nav-link ${submenu ? 'has-dropdown' : ''}`}
                   onClick={() => submenu && handleDropdown(id)}
                 >
-                  <Link to={url}>{text}</Link>
-                  {submenu && <span className="dropdown-toggle">▼</span>}
+                  <Link to={url}>
+                    {text}
+                    {submenu && <FaCaretDown className="dropdown-icon" />}
+                  </Link>
                 </div>
                 {submenu && activeDropdown === id && (
                   <ul className="dropdown">
@@ -53,14 +55,14 @@ const Nav = () => {
             );
           })}
           {currentUser && (
-            <>
-              <li>
-                <Link to="/checkout">checkout</Link>
-              </li>
-              <li>
-                <Link to="/orders">orders</Link>
-              </li>
-            </>
+            <li>
+              <Link to="/checkout">Checkout</Link>
+            </li>
+          )}
+          {currentUser && (
+            <li>
+              <Link to="/orders">Orders</Link>
+            </li>
           )}
         </ul>
         <CartButtons />

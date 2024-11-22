@@ -8,7 +8,7 @@ const Wrapper = styled.section`
     gap: 1.5rem;
     img {
       height: 300px;
-      border: solid 5px rgb(0, 255, 72);
+      border: solid 5px rgb(239 219 95);
       align-item:center;
     }
   }
@@ -17,9 +17,9 @@ const Wrapper = styled.section`
     width: 248px;
     margin: 0 auto;
     text-align: center;
-    color: rgb(0, 255, 72);
+    color: rgb(239 219 95);
     font-weight: bold;
-    border: solid 2px rgb(0, 255, 72);
+    border: solid 2px rgb(239 219 95);
     background-color: white;
 
     
@@ -29,7 +29,6 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     }
   }
-
 `;
 
 export default Wrapper;

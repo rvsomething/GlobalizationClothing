@@ -2,6 +2,27 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
 
+.splitted-navigation-container {
+  position: absolute; /* If overlaying the carousel */
+  bottom: 0; /* Aligns at the bottom of the carousel */
+  width: 100%;
+  display: flex;
+  height: 500px; /* Adjust height as needed */
+  z-index: 10; /* Places it above carousel images */
+}
+
+.splitted-navigation-container a {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  line-height: 50px; /* Match height */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.splitted-navigation-container a:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
   .section-center {
     width: 90vw;

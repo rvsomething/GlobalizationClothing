@@ -137,10 +137,10 @@ p {
 
 /* section */
 .section {
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 .section-center {
-  width: 90vw;
+  width: 95vw;
   margin: 0 auto;
   max-width: var(--max-width);
 }

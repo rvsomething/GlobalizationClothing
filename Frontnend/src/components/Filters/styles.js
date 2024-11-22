@@ -34,8 +34,8 @@ const Wrapper = styled.section`
     cursor: pointer;
   }
   .active {
-    border-color: var(--clr-primary-5);
-    color: var(--clr-primary-5);
+    border-color: var(--clr-primary-3);
+    color: var(--clr-primary-3);
   }
   .gender {
     background: var(--clr-grey-10);
@@ -73,7 +73,9 @@ const Wrapper = styled.section`
     opacity: 0.5;
   }
   .active {
-    opacity: 1;
+    opacity: 2;
+    color: var(--clr-primary-5);
+    
   }
   .all-btn .active {
     text-decoration: underline;
@@ -90,8 +92,9 @@ const Wrapper = styled.section`
     font-size: 1rem;
   }
   .clear-btn {
-    background: var(--clr-red-dark);
-    color: var(--clr-white);
+    background: transparent;
+    border:1px solid var(--clr-red-dark);
+    color: var(--clr-red-dark);
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
   }

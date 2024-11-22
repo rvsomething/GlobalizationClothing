@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Navbar, Sidebar, Footer, Toast, ErrorBoundary } from './components';
+// import GenderDiv from './components/GenderDiv';
 import { useProductsContext } from './context/products_context';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -29,6 +30,7 @@ function App() {
     <div style={{ maxHeight: '100vh', overflow: overflowPropertyToHideScroll }}>
       <Router>
         <Toast />
+        {/* <GenderDiv /> */}
         <Navbar />
         <Sidebar />
         <ErrorBoundary>

@@ -21,7 +21,13 @@ export const links = [
   {
     id: 3,
     text: 'products',
-    url: '/products',
+    url: '/products?gender=all',
+    submenu: [
+          { id: 1, text: 'Men', url: '/products?gender=men' },
+          { id: 2, text: 'Women', url: '/products?gender=women' },
+          { id: 3, text: 'Kids', url: '/products?gender=kids' },
+          
+        ],
   },
   // {
   //   id: 4,

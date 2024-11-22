@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Wrapper from './styles';
 import { useFilterContext } from '../../context/filter_context';
 import { getUniqueValues, formatPrice } from '../../utils/helpers';
 import { FaCheck } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
 
 const Filters = () => {
   const {
@@ -21,13 +22,23 @@ const Filters = () => {
     clearFilters,
     all_products,
   } = useFilterContext();
+  const location = useLocation();
 
   const categories = getUniqueValues(all_products, 'category');
   const companies = getUniqueValues(all_products, 'gender');
   const colors = getUniqueValues(all_products, 'colors');
   const sizes = getUniqueValues(all_products, 'sizes');
-  console.log(sizes);
-console.log(colors);
+// console.log(sizes);
+ // Extract `gender` from the URL query params and set the filter
+ useEffect(() => {
+  const params = new URLSearchParams(location.search);
+  const genderParam = params.get('gender');
+  if (genderParam) {
+    updateFilters({ target: { name: 'gender', value: genderParam } });
+  }
+}, [location]);
+
+const genders = ['Men', 'Women', 'Kids'];
   return (
     <Wrapper>
       <div className='content'>
@@ -66,10 +77,27 @@ console.log(colors);
             </div>
           </div>
           {/* end categories input */}
-          {/* companies input */}
+          {/* gender input */}
           <div className='form-control'>
             <h5>gender</h5>
-            <select
+            <div>
+              {genders.map((item, index) => {
+                return (
+                  <button
+                    key={index}
+                    type='button'
+                    name='gender'
+                    className={`${
+                      gender === item.toLowerCase() ? 'active' : null
+                    }`}
+                    onClick={updateFilters}
+                  >
+                    {item}
+                  </button>
+                );
+              })}
+            </div>
+            {/* <select
               name='gender'
               id='gender'
               className='gender'
@@ -83,9 +111,9 @@ console.log(colors);
                   </option>
                 );
               })}
-            </select>
+            </select> */}
           </div>
-          {/* end companies input */}
+          {/* end gender input */}
           {/* colors input */}
           <div className='form-control'>
             <h5>colors</h5>
@@ -137,7 +165,7 @@ console.log(colors);
                       name='size'
                       data-size='all'
                       className={`${
-                        category === item.toLowerCase() ? 'active' : null
+                        size === item.toLowerCase() ? 'active' : null
                       }`}
                       onClick={updateFilters}
                     >

@@ -8,7 +8,7 @@ const Wrapper = styled.section`
     gap: 1.5rem;
     img {
       height: 300px;
-      border: solid 5px rgb(0, 255, 72);
+      border: solid 5px rgb(255 178 225);
       align-item:center;
     }
   }
@@ -17,9 +17,9 @@ const Wrapper = styled.section`
     width: 248px;
     margin: 0 auto;
     text-align: center;
-    color: rgb(0, 255, 72);
+    color: rgb(255 178 225);
     font-weight: bold;
-    border: solid 2px rgb(0, 255, 72);
+    border: solid 2px rgb(255 178 225);
     background-color: white;
 
     
@@ -30,6 +30,7 @@ const Wrapper = styled.section`
     }
   }
 
+  
 `;
 
 export default Wrapper;
