@@ -7,7 +7,7 @@ import Button from '../Button';
 
 const Contact = () => {
   const { currentUser } = useUserContext();
-  const [state, handleSubmit] = useForm("xjvnbdaz");
+  const [state, handleSubmit] = useForm('xjvnbdaz');
   const [feedbackText, setFeedbackText] = useState('');
 
   useEffect(() => {

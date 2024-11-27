@@ -33,8 +33,7 @@ const Footer = () => {
             const { url, text, id } = link;
             return (
               <div key={id}>
-                {id === 4 ? <a href='mailto:globalizationclothing197@gmail.com'>{text}</a>
-                  :
+                {
                   <Link to={url}>{text}</Link>
                 }
               </div>

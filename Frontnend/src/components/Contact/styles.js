@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   padding: 5rem 0;
-  h3 {
+  h3{
     text-transform: none;
   }
   p {
