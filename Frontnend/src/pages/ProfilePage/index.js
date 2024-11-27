@@ -141,7 +141,7 @@ function ProfilePage() {
           save
         </Button>
       </form>
-      <div className='seperator'>
+      {/* <div className='seperator'>
         <hr />
         <span>Password</span>
       </div>
@@ -209,7 +209,7 @@ function ProfilePage() {
         <Button disabled={loading} type='submit' className='btn submit-btn'>
           change password
         </Button>
-      </form>
+      </form> */}
       <div className='seperator'>
         <hr />
       </div>
