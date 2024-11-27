@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="footer-section about">
             <h4>Contact Us</h4>
             <p>Email: <a href="mailto:globalizationclothing197@gmail.com">globalizationclothing197@gmail.com</a></p>
-            <p>Phone: <a href="tel:+1234567890">+919667202207</a></p>
+            <p>Phone: <a href="tel:+919667202207">+919667202207</a></p>
           </div>
         
         {/* Customer Service Section */}
