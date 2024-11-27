@@ -20,6 +20,7 @@ const Wrapper = styled.section`
     display: grid;
     gap: 1.5rem;
     justify-items: center;
+    margin-bottom: 2rem;
     margin-top: 2rem; /* Space between the hero image and cards */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
   }
