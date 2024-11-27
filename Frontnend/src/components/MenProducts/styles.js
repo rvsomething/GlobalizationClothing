@@ -1,205 +1,61 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-
   .featured {
     display: grid;
     gap: 1.5rem;
-    img {
-      height: 300px;
-      border: solid 5px rgb(26 115 232);
-      align-item:center;
-    }
+    justify-items: center; /* Center the images */
+    text-align: center;  /* Center the text below the images */
   }
+
+  .title {
+    text-align: left;
+  }
+
+  .circular-image {
+    border-radius: 50%;
+    width: 100%; /* Full width of the parent container */
+    height: 250px; /* Maintain aspect ratio */
+    max-width: 250px; /* Limit size for larger screens */
+  }
+
+  .image-text {
+    margin-top: 1rem; /* Space between the image and text */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+  }
+
   .btn {
     display: block;
-    width: 248px;
-    margin: 0 auto;
+    width: 200px;
+    margin: 20px auto;
     text-align: center;
-    color: rgb(26 115 232);
+    color: black;
     font-weight: bold;
-    border: solid 2px rgb(26 115 232);
+    border: solid 2px black;
     background-color: white;
-
-    
+    padding: 10px;
+    text-decoration: none;
   }
+
+  .image-link {
+    display: block;
+    width: 100%;
+    text-align: center;  /* Center the images within the link */
+  }
+
   @media (min-width: 576px) {
     .featured {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for better layout on mobile and desktop */
     }
   }
 
-  
-@keyframes pop-word {
-  to {
-    transform: rotateX(0);
+  @media (min-width: 1024px) {
+    .btn {
+      width: 250px;  /* Button size for larger screens */
+    }
   }
-}
-
-@keyframes show {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes bar-scale {
-  to {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes sparkle {
-  0% {
-    transform: scale(0);
-  }
-
-  60% {
-    transform: scale(1) translate(4px, 1px) rotate(8deg);
-  }
-
-  100% {
-    transform: scale(0) translate(4px, 1px) rotate(8deg);
-  }
-}
-
-@keyframes shimmer {
-  to {
-    text-shadow: 0 0 8px red;
-  }
-}
-
-h3 {
-    text-align: center;
-    align-items: center;
-  color: rgb(0, 0, 0);
-  font-family: "Playfair Display", Vidaloka, serif;
-  font-size: 4.5rem;
-display : flex;
-  justify-content: center;
-  line-height: 0.85;
-  perspective: 500px;
-}
-
-.word {
-  display: block;
-
-  animation: show 0.01s forwards, pop-word 1.5s forwards;
-  animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
-  opacity: 0;
-
-  transform: rotateX(120deg);
-  transform-origin: 50% 100%;
-}
-
-.word:nth-of-type(2) {
-  padding: 0 2rem;
-
-  animation-delay: 1.5s;
-
-  color: rgb(26 115 232);
-}
-
-.superscript {
-  position: relative;
-  animation-delay: 3.6s;
-
-  animation-duration: 0.25s;
-  animation-name: shimmer;
-
-  vertical-align: text-top;
-}
-
-/* bars */
-.superscript::before {
-  --bar-width: 25%;
-
-  position: absolute;
-
-  top: 37%;
-  left: 47%;
-  width: 14%;
-  height: 48%;
-
-  animation: bar-scale 0.25s linear 3s 1 forwards;
-
-  background: linear-gradient(
-    to right,
-    white var(--bar-width),
-    transparent var(--bar-width) calc(100% - var(--bar-width)),
-    white calc(100% - var(--bar-width))
-  );
-
-  content: "";
-
-  transform: scaleY(var(--bar-scale-y));
-}
-
-/* sparkle */
-.superscript::after {
-  --size: 10rem;
-
-  position: absolute;
-
-  top: -5%;
-  left: -85%;
-
-  width: var(--size);
-  height: var(--size);
-
-  animation: sparkle 0.4s linear 3.5s 1 forwards;
-
-  background: radial-gradient(
-      circle at center,
-      rgb(252 249 241 / 94%) 0% 7%,
-      transparent 7% 100%
-    ),
-    conic-gradient(
-      transparent 0deg 18deg,
-      var(--sparkle-color) 18deg,
-      transparent 20deg 40deg,
-      var(--sparkle-color) 40deg,
-      transparent 43deg 87deg,
-      var(--sparkle-color) 87deg,
-      transparent 95deg 175deg,
-      var(--sparkle-color) 175deg,
-      transparent 178deg 220deg,
-      var(--sparkle-color) 220deg,
-      transparent 222deg 270deg,
-      var(--sparkle-color) 270deg,
-      transparent 275deg 300deg,
-      var(--sparkle-color) 300deg,
-      transparent 303deg 360deg
-    );
-
-  border-radius: 50%;
-  clip-path: polygon(
-    50% 0,
-    59.13% 26.64%,
-    85.13% -2.35%,
-    100% 50%,
-    50% 100%,
-    0 50%,
-    31.39% 34.86%
-  );
-
-  content: "";
-
-  filter: blur(1px);
-
-  transform: scale(0);
-}
-
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 5rem;
-  }
-
-  /* sparkle */
-  .superscript::after {
-    --size: 6rem;
-  }
-}
-
 `;
 
 export default Wrapper;

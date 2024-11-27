@@ -3,6 +3,7 @@ import { FeaturedProducts, Hero } from '../../components';
 import MenProducts from '../../components/MenProducts';
 import WomenProducts from '../../components/WomenProducts';
 import KidsProducts from '../../components/KidsProducts';
+import BrandSlider from '../../components/BrandSlider';
 
 const HomePage = () => {
   useEffect(() => {
@@ -12,10 +13,14 @@ const HomePage = () => {
   return (
     <main>
       <Hero />
-      <FeaturedProducts />
+      <BrandSlider />
       <MenProducts />
-      <WomenProducts />
-      <KidsProducts />
+      <FeaturedProducts />
+
+      {/* <WomenProducts /> */}
+      {/* <KidsProducts /> */}
+
+      
       
     </main>
   );

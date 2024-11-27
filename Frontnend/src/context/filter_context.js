@@ -45,34 +45,20 @@ export const FilterProvider = ({ children }) => {
   };
 
   const updateSort = (e) => {
-    const value = e.target.value;
-    dispatch({ type: UPDATE_SORT, payload: value });
+    dispatch({ type: UPDATE_SORT, payload: e.target.value });
   };
 
   const updateFilters = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
+    const { name, value, dataset, checked, textContent } = e.target;
 
-    if (name === 'category') {
-      value = e.target.textContent;
-    }
+    let updatedValue = value;
+    // if (name === 'category') updatedValue = textContent;
+    if (name === 'color') updatedValue = dataset.color;
+    if (name === 'size') updatedValue = dataset.size;
+    if (name === 'price') updatedValue = Number(value);
+    if (name === 'shipping') updatedValue = checked;
 
-    if (name === 'color') {
-      value = e.target.dataset.color;
-    }
-    if (name === 'size') {
-      value = e.target.dataset.size;
-    }
-
-    if (name === 'price') {
-      value = Number(value);
-    }
-
-    if (name === 'shipping') {
-      value = e.target.checked;
-    }
-
-    dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
+    dispatch({ type: UPDATE_FILTERS, payload: { name, value: updatedValue } });
   };
 
   const clearFilters = () => {
@@ -103,7 +89,5 @@ export const FilterProvider = ({ children }) => {
     </FilterContext.Provider>
   );
 };
-// make sure use
-export const useFilterContext = () => {
-  return useContext(FilterContext);
-};
+
+export const useFilterContext = () => useContext(FilterContext);

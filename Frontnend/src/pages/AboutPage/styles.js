@@ -12,6 +12,7 @@ const Wrapper = styled.section`
   }
   p {
     line-height: 2;
+    text-align: justify;
     max-width: 45em;
     margin: 0 auto;
     margin-top: 2rem;

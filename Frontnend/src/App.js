@@ -20,6 +20,9 @@ import {
   PrivateRoute,
   ProfilePage,
 } from './pages';
+import MenCategory from './pages/MenCategoryPage';
+import WomenCategory from './pages/WomenCategoryPage';
+import KidsCategory from './pages/KidsCategoryPage';
 
 function App() {
   const { isSidebarOpen } = useProductsContext();
@@ -40,6 +43,15 @@ function App() {
             </Route>
             <Route exact path='/about'>
               <About />
+            </Route>
+            <Route exact path='/men'>
+              <MenCategory />
+            </Route>
+            <Route exact path='/women'>
+              <WomenCategory />
+            </Route>
+            <Route exact path='/kids'>
+              <KidsCategory />
             </Route>
             <Route exact path='/products'>
               <Products />

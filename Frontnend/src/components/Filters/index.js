@@ -38,6 +38,18 @@ const Filters = () => {
   }
 }, [location]);
 
+ // Extract `category` from the URL query params and set the filter
+ useEffect(() => {
+  const params = new URLSearchParams(location.search);
+  const categoryParam = params.get('category');
+  console.log(categoryParam);
+  if (categoryParam) {
+    updateFilters({ target: { name: 'category', value: categoryParam } });
+    console.log("updateFilters", categoryParam);
+  }
+}, [location]);
+
+
 const genders = ['Men', 'Women', 'Kids'];
   return (
     <Wrapper>
@@ -59,6 +71,7 @@ const genders = ['Men', 'Women', 'Kids'];
           <div className='form-control'>
             <h5>category</h5>
             <div>
+              
               {categories.map((item, index) => {
                 return (
                   <button
@@ -80,7 +93,7 @@ const genders = ['Men', 'Women', 'Kids'];
           {/* gender input */}
           <div className='form-control'>
             <h5>gender</h5>
-            <div>
+            {/* <div>
               {genders.map((item, index) => {
                 return (
                   <button
@@ -96,8 +109,8 @@ const genders = ['Men', 'Women', 'Kids'];
                   </button>
                 );
               })}
-            </div>
-            {/* <select
+            </div> */}
+            <select
               name='gender'
               id='gender'
               className='gender'
@@ -111,7 +124,7 @@ const genders = ['Men', 'Women', 'Kids'];
                   </option>
                 );
               })}
-            </select> */}
+            </select>
           </div>
           {/* end gender input */}
           {/* colors input */}

@@ -1,62 +1,37 @@
 import React from 'react';
-import { useProductsContext } from '../../context/products_context';
 import { Link } from 'react-router-dom';
 import Wrapper from './styles';
-import './TitleAnimationMen.css';
-import Error from '../Error';
-import Loading from '../Loading';
-import Product from '../Product';
-import image from '../../assets/men.png';
+import image1 from '../../assets/homemensection.png';
+import image2 from '../../assets/homewomensection.png';
+import image3 from '../../assets/homekidssection.png';
+
 const MenProducts = () => {
-  const {
-    products_loading: loading,
-    products_error: error,
-    featured_products: featured,
-    products,
-  } = useProductsContext();
-  const menProducts = products.filter((product) => product.gender === 'men');
-
-  if (loading) {
-    return <Loading />;
-  }
-
-  if (error) {
-    return <Error />;
-  }
-
   return (
-    <div
-    style={{
-      backgroundColor: 'rgb(26 115 232 / 10%)',
-
-      // backgroundImage: `url(${image})`,
-      // backgroundRepeat: 'no-repeat',
-      // backgroundSize: 'cover',
-      // border: 'solid 2px rgb(26 115 232)',
-    }}
-  >
-    <h3>
-      <span className='wordmen'>Men</span>
-      <span className='wordmen'>
-        Product<span className='superscript'>s</span>{' '}
-      </span>
-    </h3>
-    <Wrapper className='section'>
-      <div className='section-center featured'>
-        {menProducts.length > 0 ? (
-          menProducts.map((product) => (
-            <Product key={product.id} {...product} />
-          ))
-        ) : (
-          <p>No Men's products available.</p>
-        )}
-      </div>
-      <br />
-      <Link to='/products?gender=men' className='btn'>
-        all products
-      </Link>
-    </Wrapper>
-  </div>
+    <div>
+      <Wrapper className='section'>
+        <div className='title'>
+          <h2>Shop By-</h2>
+        </div>
+        <div className='section-center featured'>
+          <a href='/men' className="image-link">
+            <img className="circular-image" src={image1} alt="Men Products" />
+            <div className="image-text">Men</div> {/* Added text under the image */}
+          </a>
+          <a href='/women' className="image-link">
+            <img className="circular-image" src={image2} alt="Women Products" />
+            <div className="image-text">Women</div> {/* Added text under the image */}
+          </a>
+          <a href='/kids' className="image-link">
+            <img className="circular-image" src={image3} alt="Kids Products" />
+            <div className="image-text">Kids</div> {/* Added text under the image */}
+          </a>
+        </div>
+        <br />
+        <Link to='/products' className='btn'>
+          All Products
+        </Link>
+      </Wrapper>
+    </div>
   );
 };
 

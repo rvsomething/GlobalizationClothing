@@ -36,7 +36,7 @@ const Wrapper = styled.section`
     border-radius: 15px;
     h4{color:#fff;}
     p {
-      color: #000;
+      color: #fff;
       text-align: justify:
     }
   }
