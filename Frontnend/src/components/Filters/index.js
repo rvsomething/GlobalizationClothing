@@ -237,6 +237,7 @@ const genders = ['Men', 'Women', 'Kids'];
           clear filters
         </button>
       </div>
+      
     </Wrapper>
   );
 };
